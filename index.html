@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="MemGUI-Agent is an end-to-end long-horizon mobile GUI agent with proactive context management through ConAct.">
+  <title>MemGUI-Agent</title>
+  <link rel="icon" href="images/logo/memgui-agent-wo-text.drawio-1.png">
+  <link rel="stylesheet" href="css/agent.css">
+</head>
+
+<body>
+  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-lightbulb" viewBox="0 0 24 24">
+      <path d="M9 18h6M10 22h4M8.6 14.5a6 6 0 1 1 6.8 0c-.9.6-1.4 1.5-1.4 2.5h-4c0-1-.5-1.9-1.4-2.5Z" />
+    </symbol>
+    <symbol id="icon-method" viewBox="0 0 24 24">
+      <path d="M4 5h6v6H4zM14 5h6v6h-6zM9 16h6v5H9zM10 8h4M17 11v3.5L15 18M7 11v3.5L9 18" />
+    </symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24">
+      <path d="M4 19V5M4 19h17M8 16v-5M13 16V8M18 16v-8" />
+    </symbol>
+    <symbol id="icon-github" viewBox="0 0 16 16">
+      <path d="M8 0C3.58 0 0 3.67 0 8.2c0 3.62 2.29 6.69 5.47 7.78.4.08.55-.18.55-.4 0-.2-.01-.86-.01-1.56-2.01.38-2.53-.5-2.69-.95-.09-.23-.48-.95-.82-1.14-.28-.15-.68-.52-.01-.53.63-.01 1.08.59 1.23.83.72 1.24 1.87.89 2.33.68.07-.53.28-.89.51-1.09-1.78-.21-3.64-.91-3.64-4.03 0-.89.31-1.62.82-2.19-.08-.21-.36-1.04.08-2.16 0 0 .67-.22 2.2.84A7.42 7.42 0 0 1 8 4.01c.68 0 1.36.09 2 .27 1.53-1.06 2.2-.84 2.2-.84.44 1.12.16 1.95.08 2.16.51.57.82 1.3.82 2.19 0 3.13-1.87 3.82-3.65 4.03.29.26.54.75.54 1.51 0 1.09-.01 1.97-.01 2.24 0 .22.15.48.55.4A8.1 8.1 0 0 0 16 8.2C16 3.67 12.42 0 8 0Z" />
+    </symbol>
+    <symbol id="icon-paper" viewBox="0 0 24 24">
+      <path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6" />
+    </symbol>
+    <symbol id="icon-video" viewBox="0 0 24 24">
+      <path d="M4 7h11a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3H4zM18 11l4-3v8l-4-3" />
+    </symbol>
+    <symbol id="icon-hf" viewBox="0 0 24 24">
+      <path d="M7.3 8.5a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2ZM16.7 8.5a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2ZM4.7 11.2c.8-1.2 2.4-1.6 3.6-.8l1.2.8c.7.5 1.6.7 2.5.7s1.8-.2 2.5-.7l1.2-.8c1.2-.8 2.8-.4 3.6.8.8 1.2.4 2.8-.8 3.6l-.9.6c-.4 3-2.8 5.1-5.6 5.1s-5.2-2.1-5.6-5.1l-.9-.6c-1.2-.8-1.6-2.4-.8-3.6ZM9.3 15.5c.5 1 1.5 1.6 2.7 1.6s2.2-.6 2.7-1.6H9.3Z" />
+    </symbol>
+  </svg>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <div class="nav-brand-row" aria-label="MemGUI-Agent">
+        <a class="brand" href="#">
+          <img src="images/brand/memgui-agent-logo.png" alt="MemGUI-Agent">
+        </a>
+      </div>
+      <div class="nav-links nav-sections">
+        <a href="#videos">Videos</a>
+        <a href="#results">Results</a>
+        <a href="#method">Method</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#citation">Citation</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="eyebrow">MemGUI-Agent</p>
+        <h1>
+          <span class="title-line title-line-1">MemGUI-Agent: An End-to-End Long-Horizon Mobile</span>
+          <span class="title-line title-line-2">GUI Agent with Proactive Context Management</span>
+        </h1>
+        <p class="hero-authors">Anonymous submission</p>
+        <p class="hero-copy">
+          MemGUI-Agent uses ConAct, a Context-as-Action interface that folds
+          action history, updates UI memory, and emits the next GUI action in one
+          structured response.
+        </p>
+      </div>
+      <div class="hero-actions">
+        <a class="button primary" href="https://github.com/memgui-agent-anonymous/MemGUI-Agent" target="_blank" rel="noopener">
+          <svg class="button-icon fill-icon"><use href="#icon-github"></use></svg>
+          Code Repo
+        </a>
+        <a class="button accent" href="https://huggingface.co/datasets/memgui-agent-anonymous/MemGUI-3K" target="_blank" rel="noopener">
+          <span class="hf-emoji" aria-hidden="true">🤗</span>
+          MemGUI-3K
+        </a>
+        <a class="button accent soft" href="https://huggingface.co/memgui-agent-anonymous/MemGUI-8B-SFT" target="_blank" rel="noopener">
+          <span class="hf-emoji" aria-hidden="true">🤗</span>
+          MemGUI-8B-SFT
+        </a>
+        <a class="button secondary" href="https://www.youtube.com/@memgui-agent-anonymous" target="_blank" rel="noopener">
+          <svg class="button-icon"><use href="#icon-video"></use></svg>
+          Demo Videos
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="videos" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Anonymous Demo Videos</p>
+            <h2>Case studies from the paper</h2>
+          </div>
+          <p class="lead">
+            Each task groups the baseline failure and our successful rollout, with
+            benchmark source, task query, and rollout length.
+          </p>
+        </div>
+
+        <div class="comparison-library">
+          <article class="comparison-card">
+            <div class="comparison-head">
+              <span class="bench-label">MemGUI-Bench · 8B · AP News Digest</span>
+              <h3>Long-horizon reading and note creation</h3>
+              <p class="task-query"><strong>Task query:</strong> In the AP News app, find the three most recent articles from the Technology section and the three most recent from the Business section. Read each full article, remember its title and main content, then create a Joplin note titled <em>Tech &amp; Business Digest</em> with sectioned summaries.</p>
+            </div>
+            <div class="paired-videos">
+              <article class="video-card outcome-card">
+                <div class="video-frame" data-youtube-key="memgui-bench-8b-base" data-title="MemGUI-Bench 8B Base">
+                  <a class="anonymous-video-placeholder" href="https://www.youtube.com/@memgui-agent-anonymous" target="_blank" rel="noopener">
+                    <img src="images/video-covers/memgui-bench-8b-base.png" alt="MemGUI-Bench 8B baseline video cover">
+                    <span>View on the anonymous YouTube channel</span>
+                  </a>
+                </div>
+                <div>
+                  <div class="track-title"><h4>Qwen3-VL-8B-Instruct</h4><span class="status-pill failed">Failed · 191 steps</span></div>
+                  <p>ReAct-style baseline opens articles but loses the details before writing the Joplin note.</p>
+                  <div class="video-meta"><span>Base</span><a data-youtube-link="memgui-bench-8b-base" href="https://www.youtube.com/@memgui-agent-anonymous">YouTube</a></div>
+                </div>
+              </article>
+              <article class="video-card outcome-card">
+                <div class="video-frame" data-youtube-key="memgui-bench-8b-ours" data-title="MemGUI-Bench 8B Ours">
+                  <a class="anonymous-video-placeholder" href="https://www.youtube.com/@memgui-agent-anonymous" target="_blank" rel="noopener">
+                    <img src="images/video-covers/memgui-bench-8b-ours.png" alt="MemGUI-Bench 8B MemGUI video cover">
+                    <span>View on the anonymous YouTube channel</span>
+                  </a>
+                </div>
+                <div>
+                  <div class="track-title"><h4>MemGUI-8B-SFT</h4><span class="status-pill success">Successful · 140 steps</span></div>
+                  <p>Our agent stores article evidence as structured memory and retrieves it when composing the final note.</p>
+                  <div class="video-meta"><span>Ours</span><a data-youtube-link="memgui-bench-8b-ours" href="https://www.youtube.com/@memgui-agent-anonymous">YouTube</a></div>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article class="comparison-card">
+            <div class="comparison-head">
+              <span class="bench-label">MemGUI-Bench · 235B · Compare Product Specs</span>
+              <h3>Collecting product specs and writing a note</h3>
+              <p class="task-query"><strong>Task query:</strong> Open Amazon, collect screen size, battery, and storage for iPhone 15 Pro, Galaxy S24 Ultra, and Pixel 8 Pro, then write all nine facts into a Joplin note named <em>Phone Spec Matrix</em>.</p>
+            </div>
+            <div class="paired-videos">
+              <article class="video-card outcome-card">
+                <div class="video-frame" data-youtube-key="memgui-bench-235b-base" data-title="MemGUI-Bench 235B Base">
+                  <a class="anonymous-video-placeholder" href="https://www.youtube.com/@memgui-agent-anonymous" target="_blank" rel="noopener">
+                    <img src="images/video-covers/memgui-bench-235b-base.png" alt="MemGUI-Bench 235B baseline video cover">
+                    <span>View on the anonymous YouTube channel</span>
+                  </a>
+                </div>
+                <div>
+                  <div class="track-title"><h4>Qwen3-VL-235B-Thinking</h4><span class="status-pill failed">Failed · 69 steps</span></div>
+                  <p>Baseline remains inside Amazon after repeated scrolling and never writes the final Joplin note.</p>
+                  <div class="video-meta"><span>Base</span><a data-youtube-link="memgui-bench-235b-base" href="https://www.youtube.com/@memgui-agent-anonymous">YouTube</a></div>
+                </div>
+              </article>
+              <article class="video-card outcome-card">
+                <div class="video-frame" data-youtube-key="memgui-bench-235b-ours" data-title="MemGUI-Bench 235B Ours">
+                  <a class="anonymous-video-placeholder" href="https://www.youtube.com/@memgui-agent-anonymous" target="_blank" rel="noopener">
+                    <img src="images/video-covers/memgui-bench-235b-ours.png" alt="MemGUI-Bench 235B MemGUI video cover">
+                    <span>View on the anonymous YouTube channel</span>
+                  </a>
+                </div>
+                <div>
+                  <div class="track-title"><h4>MemGUI-Agent-235B</h4><span class="status-pill success">Successful · 53 steps</span></div>
+                  <p>Our agent folds search spans, stores the nine facts, and completes the Joplin note.</p>
+                  <div class="video-meta"><span>Ours</span><a data-youtube-link="memgui-bench-235b-ours" href="https://www.youtube.com/@memgui-agent-anonymous">YouTube</a></div>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article class="comparison-card">
+            <div class="comparison-head">
+              <span class="bench-label">MobileWorld · 8B · Alibaba Headquarters Contact</span>
+              <h3>Finding a business phone number and creating a contact</h3>
+              <p class="task-query"><strong>Task query:</strong> Find the phone number of Alibaba's Hangzhou headquarters on Google Maps, and based on that, create a new contact named Kevin Zhang with the company.</p>
+            </div>
+            <div class="paired-videos">
+              <article class="video-card outcome-card">
+                <div class="video-frame" data-youtube-key="mobileworld-8b-base" data-title="MobileWorld 8B Base">
+                  <a class="anonymous-video-placeholder" href="https://www.youtube.com/@memgui-agent-anonymous" target="_blank" rel="noopener">
+                    <img src="images/video-covers/mobileworld-8b-base.png" alt="MobileWorld 8B baseline video cover">
+                    <span>View on the anonymous YouTube channel</span>
+                  </a>
+                </div>
+                <div>
+                  <div class="track-title"><h4>Qwen3-VL-8B-Instruct</h4><span class="status-pill failed">Failed · 20 steps</span></div>
+                  <p>Baseline leaves Google Maps early and later hallucinates a phone number while editing Contacts.</p>
+                  <div class="video-meta"><span>Base</span><a data-youtube-link="mobileworld-8b-base" href="https://www.youtube.com/@memgui-agent-anonymous">YouTube</a></div>
+                </div>
+              </article>
+              <article class="video-card outcome-card">
+                <div class="video-frame" data-youtube-key="mobileworld-8b-ours" data-title="MobileWorld 8B Ours">
+                  <a class="anonymous-video-placeholder" href="https://www.youtube.com/@memgui-agent-anonymous" target="_blank" rel="noopener">
+                    <img src="images/video-covers/mobileworld-8b-ours.png" alt="MobileWorld 8B MemGUI video cover">
+                    <span>View on the anonymous YouTube channel</span>
+                  </a>
+                </div>
+                <div>
+                  <div class="track-title"><h4>MemGUI-8B-SFT</h4><span class="status-pill success">Successful · 26 steps</span></div>
+                  <p>Our agent extracts and persists the real number before creating the contact.</p>
+                  <div class="video-meta"><span>Ours</span><a data-youtube-link="mobileworld-8b-ours" href="https://www.youtube.com/@memgui-agent-anonymous">YouTube</a></div>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article class="comparison-card">
+            <div class="comparison-head">
+              <span class="bench-label">MobileWorld · 235B · Mastodon Contact Update</span>
+              <h3>Updating contact details from a social post</h3>
+              <p class="task-query"><strong>Task query:</strong> Olivia left new phone and email information in her latest Mastodon post. Update Olivia in Contacts, then send her the text message: <em>Hello, how are you</em>. Set the email label to internet.</p>
+            </div>
+            <div class="paired-videos">
+              <article class="video-card outcome-card">
+                <div class="video-frame" data-youtube-key="mobileworld-235b-base" data-title="MobileWorld 235B Base">
+                  <a class="anonymous-video-placeholder" href="https://www.youtube.com/@memgui-agent-anonymous" target="_blank" rel="noopener">
+                    <img src="images/video-covers/mobileworld-235b-base.png" alt="MobileWorld 235B baseline video cover">
+                    <span>View on the anonymous YouTube channel</span>
+                  </a>
+                </div>
+                <div>
+                  <div class="track-title"><h4>Qwen3-VL-235B-Thinking</h4><span class="status-pill failed">Failed · 21 steps</span></div>
+                  <p>Baseline exits Mastodon before Olivia's post loads and later reuses stale contact information.</p>
+                  <div class="video-meta"><span>Base</span><a data-youtube-link="mobileworld-235b-base" href="https://www.youtube.com/@memgui-agent-anonymous">YouTube</a></div>
+                </div>
+              </article>
+              <article class="video-card outcome-card">
+                <div class="video-frame" data-youtube-key="mobileworld-235b-ours" data-title="MobileWorld 235B Ours">
+                  <a class="anonymous-video-placeholder" href="https://www.youtube.com/@memgui-agent-anonymous" target="_blank" rel="noopener">
+                    <img src="images/video-covers/mobileworld-235b-ours.png" alt="MobileWorld 235B MemGUI video cover">
+                    <span>View on the anonymous YouTube channel</span>
+                  </a>
+                </div>
+                <div>
+                  <div class="track-title"><h4>MemGUI-Agent-235B</h4><span class="status-pill success">Successful · 36 steps</span></div>
+                  <p>Our agent stores Olivia's new phone and email, then uses them for Contacts and SMS.</p>
+                  <div class="video-meta"><span>Ours</span><a data-youtube-link="mobileworld-235b-ours" href="https://www.youtube.com/@memgui-agent-anonymous">YouTube</a></div>
+                </div>
+              </article>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">01 / Main Results</p>
+            <h2>Context efficiency and task success</h2>
+          </div>
+          <p class="lead">
+            MemGUI-Agent improves both zero-shot 235B and trained 8B settings on
+            long-horizon mobile GUI benchmarks.
+          </p>
+        </div>
+
+        <div class="result-panel">
+          <img class="result-image" src="images/results/main-performance.png" loading="lazy"
+            alt="Context efficiency and benchmark performance of MemGUI-Agent">
+          <div class="result-caption">
+            Context efficiency and benchmark performance of MemGUI-Agent.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="method" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">02 / Method</p>
+            <h2>ConAct: Context-as-Action</h2>
+          </div>
+          <p class="lead">
+            Instead of carrying an ever-growing raw transcript, MemGUI-Agent makes
+            context updates explicit and executable inside each model response.
+          </p>
+        </div>
+
+        <div class="paper-figure">
+          <img src="images/paper/conact-framework.png" alt="ConAct framework" loading="lazy">
+          <div class="figure-caption">
+            ConAct treats context management as part of the action space: the
+            policy updates folded history, folded UI state, and the recent step
+            record while producing the next GUI action.
+          </div>
+        </div>
+
+        <div class="grid three">
+          <div class="card">
+            <div class="card-body">
+              <h3>Folded Action History</h3>
+              <p>Compresses completed interaction spans while preserving task-relevant progress.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3>Folded UI State</h3>
+              <p>Stores persistent UI facts such as names, prices, values, and form state.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3>Recent Step Record</h3>
+              <p>Keeps local interaction continuity for the next GUI action.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dataset" class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">03 / Dataset and Case Study</p>
+            <h2>MemGUI-3K and case study</h2>
+          </div>
+          <p class="lead">
+            MemGUI-3K supports SFT and offline analysis. The case study follows
+            one long mobile workflow end to end.
+          </p>
+        </div>
+
+        <div class="grid two figure-grid">
+          <div class="paper-figure">
+            <img src="images/paper/dataset-statistics.png" alt="MemGUI-3K dataset statistics" loading="lazy">
+            <div class="figure-caption">
+              MemGUI-3K contains 2,956 trajectories and 64,430 reasonable-step SFT samples.
+            </div>
+          </div>
+          <div class="paper-figure">
+            <img src="images/paper/case-study-good.png" alt="MemGUI-Agent case study" loading="lazy">
+            <div class="figure-caption">
+              Paper case study showing compact context over a long mobile interaction.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="citation" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">04 / BibTeX</p>
+            <h2>Reference</h2>
+          </div>
+          <p class="lead">
+            Author identities and publication links are withheld during double-blind review.
+          </p>
+        </div>
+        <pre class="citation"><code>@inproceedings{anonymous2026memgui,
+  title={MemGUI-Agent: An End-to-End Long-Horizon Mobile GUI Agent with Proactive Context Management},
+  author={Anonymous Authors},
+  booktitle={Under double-blind review},
+  year={2026}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      MemGUI-Agent. Code, data, and trained models are available for research use.
+    </div>
+  </footer>
+  <script src="js/video-config.js"></script>
+  <script src="js/anonymous-videos.js"></script>
+</body>
+
+</html>
